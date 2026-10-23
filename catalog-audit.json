@@ -1,0 +1,197 @@
+{
+  "checkedAt": "2026-10-23T09:06:47.610Z",
+  "method": "Each exact VK product card opened in browser without signing in. Product name, price and material read from its own description. Each local photo copied/downloaded from the corresponding product image.",
+  "skuNote": "Public SKU in this demo is the stable VK product ID; internal studio SKUs are not asserted.",
+  "officialSources": [
+    "https://vk.ru/kitsune_piercing",
+    "https://vk.ru/market-73730743",
+    "https://taplink.cc/kitsumori",
+    "https://t.me/kitsumori"
+  ],
+  "products": [
+    {
+      "id": "14501338",
+      "sourceUrl": "https://vk.ru/market/product/nakrutka-73730743-14501338",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Накрутка",
+        "price": 1500,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14501338.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": "Do not treat the top as a complete jewellery assembly with a base."
+    },
+    {
+      "id": "14501335",
+      "sourceUrl": "https://vk.ru/market/product/nakrutka-73730743-14501335",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Накрутка",
+        "price": 2200,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14501335.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": "Do not treat the top as a complete jewellery assembly with a base."
+    },
+    {
+      "id": "14501329",
+      "sourceUrl": "https://vk.ru/market/product/nakrutka-73730743-14501329",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Накрутка",
+        "price": 1600,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14501329.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": "Do not treat the top as a complete jewellery assembly with a base."
+    },
+    {
+      "id": "14495089",
+      "sourceUrl": "https://vk.ru/market/product/klaster-73730743-14495089",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Кластер",
+        "price": 2500,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14495089.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "14495080",
+      "sourceUrl": "https://vk.ru/market/product/klaster-73730743-14495080",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Кластер",
+        "price": 3000,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14495080.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "14495073",
+      "sourceUrl": "https://vk.ru/market/product/klaster-73730743-14495073",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Кластер",
+        "price": 3000,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14495073.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "14495040",
+      "sourceUrl": "https://vk.ru/market/product/kliker-73730743-14495040",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Кликер",
+        "price": 4000,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14495040.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "14488779",
+      "sourceUrl": "https://vk.ru/market/product/kliker-s-turmalinom-73730743-14488779",
+      "checkedAt": "2026-10-23T09:06:47.610Z",
+      "verification": "verified-in-browser",
+      "confirmed": {
+        "name": "Кликер с турмалином",
+        "price": 4000,
+        "currency": "RUB",
+        "material": "Титан ASTM F-136",
+        "materialEvidence": "Материал: титан ASTM F-136"
+      },
+      "imageFile": "/assets/14488779.jpg",
+      "imagesVerified": 1,
+      "unconfirmed": [
+        "size",
+        "thread",
+        "kit",
+        "currentStock",
+        "variants"
+      ],
+      "notes": "Tourmaline appears in the source product title; no further stone specifications asserted."
+    }
+  ]
+}
