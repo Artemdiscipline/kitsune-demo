@@ -1,6 +1,7 @@
 import {DatabaseSync} from 'node:sqlite';
 import {mkdirSync} from 'node:fs';
 import path from 'node:path';
+import {normalizeRequest} from '../dist/shared/model.js';
 
 export function openStore(filename) {
   if (filename !== ':memory:') mkdirSync(path.dirname(path.resolve(filename)), {recursive:true});
@@ -16,7 +17,7 @@ export function openStore(filename) {
       delivered_at TEXT
     );
     CREATE TABLE IF NOT EXISTS bot_state (key TEXT PRIMARY KEY, value TEXT NOT NULL);`);
-  const parse = row => row ? JSON.parse(row.body) : null;
+  const parse = row => row ? normalizeRequest(JSON.parse(row.body)) : null;
   return {
     db,
     get: id => parse(db.prepare('SELECT body FROM requests WHERE id=?').get(id)),

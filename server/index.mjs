@@ -3,7 +3,7 @@ import path from 'node:path';
 import {readFile,stat} from 'node:fs/promises';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {catalog} from '../dist/shared/catalog.js';
-import {createRequest,updateRequest,decideProposal,money,total} from '../dist/shared/model.js';
+import {createRequest,updateRequest,decideProposal,addMessage,money,total} from '../dist/shared/model.js';
 import {validateInitData,telegramCall,telegramConfig} from './telegram.mjs';
 import {openStore} from './store.mjs';
 
@@ -62,12 +62,19 @@ export function createApplication(options={}) {
           store.insert(request,notificationFor(request,config));
           send(res,201,request);void flushNotifications();return;
         }
-        const match=url.pathname.match(/^\/api\/requests\/([^/]+)(\/proposal)?$/);
+        const match=url.pathname.match(/^\/api\/requests\/([^/]+)(\/proposal|\/messages)?$/);
         if(match){
           const request=store.get(decodeURIComponent(match[1]));
           if(!request || (!isAdmin && request.ownerId!==String(user.id)))fail(404,'Запрос не найден.');
           if(!match[2] && req.method==='GET')return send(res,200,request);
-          if(match[2] && req.method==='POST'){
+          if(match[2] === '/messages' && req.method === 'POST') {
+            const body = await readBody(req);
+            const author = isAdmin && (body.asAdmin === true || request.ownerId !== String(user.id)) ? 'admin' : 'client';
+            const updated = addMessage(request,body,author);
+            if (updated !== request) store.update(updated,body.version);
+            return send(res,200,updated);
+          }
+          if(match[2] === '/proposal' && req.method==='POST'){
             if(request.ownerId!==String(user.id))fail(403,'Только клиент может принять предложенную замену.');
             const body=await readBody(req);const updated=decideProposal(request,body.key,body.decision,body.version);
             store.update(updated,body.version);return send(res,200,updated);

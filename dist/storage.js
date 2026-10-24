@@ -1,9 +1,10 @@
+import {normalizeRequest} from './shared/model.js';
 export const STORAGE = 'kitsune-demo-v1';
 export function readState(defaultState, storage = localStorage) {
   const saved = JSON.parse(storage.getItem(STORAGE) || 'null');
   if (!saved) return defaultState;
   if (!Array.isArray(saved.cart) || !Array.isArray(saved.requests)) throw new Error('Некорректный формат сохранённых данных.');
-  return {...defaultState,...saved};
+  return {...defaultState,...saved,requests:saved.requests.map(normalizeRequest)};
 }
 export function writeState(next, isDemo, storage = localStorage) {
   // A single synchronous storage write: request + selection change succeed together.

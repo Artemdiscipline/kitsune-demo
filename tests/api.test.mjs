@@ -57,6 +57,15 @@ test('server authorization, idempotency, snapshots, partial availability, propos
     const decision={version:2,key:r.items[1].key,decision:'accepted'};
     assert.equal((await call('/requests/'+r.id+'/proposal',{id:900,method:'POST',body:decision})).status,403);
     const accepted=await call('/requests/'+r.id+'/proposal',{method:'POST',body:decision});assert.equal(accepted.body.items[1].proposal.decision,'accepted');assert.equal(accepted.body.items[1].product.id,'14501335');
+    const message={text:'Размер уточню с мастером',id:'server-message-0001',version:3,asAdmin:true};
+    assert.equal((await call('/requests/'+r.id+'/messages',{id:102,method:'POST',body:message})).status,404);
+    const reply=await call('/requests/'+r.id+'/messages',{method:'POST',body:message});
+    assert.equal(reply.status,200);assert.equal(reply.body.messages.at(-1).author,'client');
+    const repeatedReply=await call('/requests/'+r.id+'/messages',{method:'POST',body:message});
+    assert.equal(repeatedReply.body.version,reply.body.version);
+    const answer=await call('/requests/'+r.id+'/messages',{id:900,method:'POST',body:{text:'Да, поможем подобрать размер',id:'server-admin-message-001',version:4}});
+    assert.equal(answer.body.messages.at(-1).author,'admin');
+    assert.equal(answer.body.adminComment,'Да, поможем подобрать размер');
     // A failed Telegram delivery keeps the saved request and durable outbox.
     assert.equal(app.store.pendingNotifications().length,1);assert.equal(sent.length,0);
     networkAvailable=true;await app.flushNotifications();assert.equal(sent.length,1);assert.equal(sent[0].payload.chat_id,'900');assert.equal(app.store.pendingNotifications().length,0);
